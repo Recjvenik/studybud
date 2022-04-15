@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-izr4=q8qeqdvje32_$*--z=dl_=ng34cqv-xs40w-^4)=8uqu8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['h-studybud.herokuapp.com', '127.0.0.1']
 
@@ -89,17 +89,23 @@ WSGI_APPLICATION = 'studybud.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'studybud',
+#         'USER': 'root',
+#         'PASSWORD': 'windows11',
+#         'PORT': 3306,
+#         'HOST': '127.0.0.1',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'studybud',
-        'USER': 'root',
-        'PASSWORD': 'windows11',
-        'PORT': 3306,
-        'HOST': '127.0.0.1',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
